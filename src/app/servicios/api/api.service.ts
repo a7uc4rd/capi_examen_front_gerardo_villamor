@@ -14,10 +14,7 @@ export class ApiService {
 
  getPersonas(){
     let header = new HttpHeaders().set('type-content','aplication/json')
-    .set('header','Access-Control-Allow-Origin: *')
-    .set('header','Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method')
-    .set('header','Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE')
-    .set('header','Allow: GET, POST, OPTIONS, PUT, DELETE')
+    
     return this.http.get(this._url,{
       headers:header
     });

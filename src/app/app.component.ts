@@ -8,12 +8,16 @@ import { ApiService } from './servicios/api/api.service';
 })
 export class AppComponent {
   title = 'capi_examen_front_gerardo_villamor';
+  public personas:Array<any>=[]
 
   constructor(
     private apiService:ApiService
   ){
-    this.apiService.getPersonas().subscribe(resp=>{
-      console.log(resp)
+    this.apiService.getPersonas().subscribe((resp:any)=>{
+      console.log(resp.usuarios)
+      this.personas=resp.usuarios
     })
   }
+
+  
 }
