@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import{ ApiService} from '../../servicios/api/api.service';
+
 
 @Component({
   selector: 'app-tabla-usuarios',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablaUsuariosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api:ApiService) { }
 
   ngOnInit(): void {
+    this.api.onLoad('data').subscribe(data =>{
+      console.log(data);
+    })
   }
 
 }
