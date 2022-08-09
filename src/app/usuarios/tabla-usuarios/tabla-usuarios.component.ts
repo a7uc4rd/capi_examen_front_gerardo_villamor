@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{ ApiService} from '../../servicios/api/api.service';
+import{ ResponseI} from '../../modelos/response.interface'
 
 
 @Component({
@@ -12,9 +13,7 @@ export class TablaUsuariosComponent implements OnInit {
   constructor(private api:ApiService) { }
 
   ngOnInit(): void {
-    this.api.onLoad('data').subscribe(data =>{
-      console.log(data);
-    })
+   
   }
 
 }
